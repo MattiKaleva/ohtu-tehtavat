@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-23T18:43:43" hostname="DESKTOP-PO6BORI" time="0.611">
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-11-23T21:45:02" hostname="DESKTOP-PO6BORI" time="1.039">
   <properties/>
-  <testcase name="ostettaessaTuotettaJotaEiOleVarastossaPankinMetodiaTilisiirtoKutsutaanOikeillaParametreilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.611"/>
+  <testcase name="uusiViitenumeroJokaTapahtumalle" classname="ohtu.verkkokauppa.KauppaTest" time="1.015"/>
+  <testcase name="aloitaAsiointiNollaaEdellisenOstoksen" classname="ohtu.verkkokauppa.KauppaTest" time="0.004"/>
+  <testcase name="ostettaessaTuotettaJotaEiOleVarastossaPankinMetodiaTilisiirtoKutsutaanOikeillaParametreilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <testcase name="kahdenEriTuotteenOstamisenJalkeenPankinMetodiaTilisiirtoKutsutaanOikeillaParametreilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.007"/>
+  <testcase name="kahdenSamanTuotteenOstamisenJalkeenPankinMetodiaTilisiirtoKutsutaanOikeillaParametreilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="palautaVarastoonPoistaaTuotteenOstoskorista" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -87,4 +87,57 @@ public class KauppaTest {
 
     }
 
+    @Test
+    public void aloitaAsiointiNollaaEdellisenOstoksen() {
+        when(viite.uusi()).thenReturn(42);
+        when(varasto.saldo(1)).thenReturn(10);
+        when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+
+        kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(1);
+        kauppa.tilimaksu("simo", "12345");
+        verify(pankki).tilisiirto(eq("simo"), eq(42), eq("12345"), eq("33333-44455"),eq(5));
+
+        kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(1);
+        kauppa.lisaaKoriin(1);
+        kauppa.tilimaksu("sami", "123456");
+        verify(pankki).tilisiirto(eq("sami"), eq(42), eq("123456"), eq("33333-44455"),eq(10));
+    }
+
+    @Test
+    public void uusiViitenumeroJokaTapahtumalle() {
+        when(viite.uusi())
+                .thenReturn(42)
+                .thenReturn(43);
+        when(varasto.saldo(1)).thenReturn(10);
+        when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+
+        kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(1);
+        kauppa.tilimaksu("simo", "12345");
+        verify(pankki).tilisiirto(eq("simo"), eq(42), eq("12345"), eq("33333-44455"),eq(5));
+
+        kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(1);
+        kauppa.tilimaksu("sami", "12345");
+        verify(pankki).tilisiirto(eq("sami"), eq(43), eq("12345"), eq("33333-44455"),eq(5));
+    }
+
+    @Test
+    public void palautaVarastoonPoistaaTuotteenOstoskorista() {
+        when(viite.uusi()).thenReturn(42);
+
+        when(varasto.saldo(1)).thenReturn(10);
+        when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+
+        kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(1);
+        kauppa.lisaaKoriin(1);
+        kauppa.poistaKorista(1);
+        kauppa.tilimaksu("simo", "12345");
+
+        verify(pankki).tilisiirto(eq("simo"), eq(42), eq("12345"), eq("33333-44455"),eq(5));
+    }
+
 }

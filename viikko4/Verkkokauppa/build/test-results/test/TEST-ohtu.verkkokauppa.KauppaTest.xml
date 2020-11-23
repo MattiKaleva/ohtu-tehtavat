@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-23T18:43:43" hostname="DESKTOP-PO6BORI" time="0.611">
+  <properties/>
+  <testcase name="ostettaessaTuotettaJotaEiOleVarastossaPankinMetodiaTilisiirtoKutsutaanOikeillaParametreilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.611"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
